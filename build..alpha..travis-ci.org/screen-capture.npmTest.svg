@@ -6,7 +6,7 @@
 <tspan x="10" y="58">&gt; (set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)</tspan>
 <tspan x="10" y="74"></tspan>
 <tspan x="10" y="90"></tspan>
-<tspan x="10" y="106">[MODE_BUILD=npmTest] - 2017-04-02T05:44:44Z - npm-testing /home/travis/build/npmdoc/node-npmdoc-\</tspan>
+<tspan x="10" y="106">[MODE_BUILD=npmTest] - 2017-04-02T05:51:51Z - npm-testing /home/travis/build/npmdoc/node-npmdoc-\</tspan>
 <tspan x="10" y="122">watch</tspan>
 <tspan x="10" y="138"></tspan>
 <tspan x="10" y="154"></tspan>
@@ -14,88 +14,88 @@
 <tspan x="10" y="186">c-watch/test.js</tspan>
 <tspan x="10" y="202">merging file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/test-report.json to test-re\</tspan>
 <tspan x="10" y="218">port</tspan>
-<tspan x="10" y="234">&gt; server listening on http-port 33612</tspan>
+<tspan x="10" y="234">&gt; server listening on http-port 59414</tspan>
 <tspan x="10" y="250">created apidoc file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/apidoc.html</tspan>
 <tspan x="10" y="266"></tspan>
 <tspan x="10" y="282"></tspan>
 <tspan x="10" y="298">browserTest - created electron entry-page /home/travis/build/npmdoc/node-npmdoc-watch/tmp/electr\</tspan>
-<tspan x="10" y="314">on.15b2d31b9670.2f30e4a6723e8.html</tspan>
+<tspan x="10" y="314">on.15b2d383cd10.ca5918e435975.html</tspan>
 <tspan x="10" y="330"></tspan>
 <tspan x="10" y="346">[node test-case 1 of 6 passed] - testCase_buildLib_default</tspan>
 <tspan x="10" y="362">[node test-case 2 of 6 passed] - testCase_buildReadme_default</tspan>
 <tspan x="10" y="378">[node test-case 3 of 6 passed] - testCase_buildTest_default</tspan>
 <tspan x="10" y="394"></tspan>
 <tspan x="10" y="410">browserTest - created electron entry-page /home/travis/build/npmdoc/node-npmdoc-watch/tmp/electr\</tspan>
-<tspan x="10" y="426">on.15b2d31b9a20.69ecf94b366b2.html</tspan>
+<tspan x="10" y="426">on.15b2d383d050.65445f1c424be.html</tspan>
 <tspan x="10" y="442"></tspan>
 <tspan x="10" y="458">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
 <tspan x="10" y="474">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
 <tspan x="10" y="490">merging file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/test-report.json to test-re\</tspan>
 <tspan x="10" y="506">port</tspan>
 <tspan x="10" y="522">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
-<tspan x="10" y="538">&gt; server listening on http-port 36671</tspan>
-<tspan x="10" y="554">[4800:0402/054446:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
-<tspan x="10" y="570">[4800:0402/054446:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
-<tspan x="10" y="586">[4830:0402/054446:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="538">[4849:0402/055152:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="554">[4849:0402/055152:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="570">&gt; server listening on http-port 57130</tspan>
+<tspan x="10" y="586">[4880:0402/055152:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
 <tspan x="10" y="602">in process gpu-process. </tspan>
-<tspan x="10" y="618">merging file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/test-report.json to test-re\</tspan>
-<tspan x="10" y="634">port</tspan>
-<tspan x="10" y="650">[4800:0402/054446:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
-<tspan x="10" y="666">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
-<tspan x="10" y="682">[4798:0402/054446:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
-<tspan x="10" y="698">[4798:0402/054446:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
-<tspan x="10" y="714">[4864:0402/054446:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
-<tspan x="10" y="730">in process gpu-process. </tspan>
-<tspan x="10" y="746">[4798:0402/054446:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
-<tspan x="10" y="762"></tspan>
-<tspan x="10" y="778">browserTest - opened url http://127.0.0.1:33612?modeTest=1</tspan>
-<tspan x="10" y="794"></tspan>
+<tspan x="10" y="618">[4849:0402/055152:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="634"></tspan>
+<tspan x="10" y="650">browserTest - opened url /home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="666"></tspan>
+<tspan x="10" y="682">merging file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/test-report.json to test-re\</tspan>
+<tspan x="10" y="698">port</tspan>
+<tspan x="10" y="714">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="730">[4853:0402/055153:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="746">[4853:0402/055153:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="762">[4927:0402/055153:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="778">in process gpu-process. </tspan>
+<tspan x="10" y="794">[4853:0402/055153:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
 <tspan x="10" y="810"></tspan>
-<tspan x="10" y="826">browserTest - opened url /home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="826">browserTest - opened url http://127.0.0.1:59414?modeTest=1</tspan>
 <tspan x="10" y="842"></tspan>
-<tspan x="10" y="858">[4800:0402/054448:INFO:CONSOLE(245)] "----------|-----------|-----------|-----------|-----------\</tspan>
+<tspan x="10" y="858">[4853:0402/055155:INFO:CONSOLE(245)] "----------|-----------|-----------|-----------|-----------\</tspan>
 <tspan x="10" y="874">|</tspan>
 <tspan x="10" y="890">File      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
 <tspan x="10" y="906">----------|-----------|-----------|-----------|-----------|</tspan>
 <tspan x="10" y="922">----------|-----------|-----------|-----------|-----------|</tspan>
 <tspan x="10" y="938">All files |       100 |       100 |       100 |       100 |</tspan>
 <tspan x="10" y="954">----------|-----------|-----------|-----------|-----------|</tspan>
-<tspan x="10" y="970">", source: file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/electron.15b2d31b9a20.69ecf94b\</tspan>
-<tspan x="10" y="986">366b2.html (245)</tspan>
-<tspan x="10" y="1002">[4800:0402/054448:INFO:CONSOLE(245)] "created coverage file:///tmp/build/coverage.html/index.htm\</tspan>
-<tspan x="10" y="1018">l", source: file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/electron.15b2d31b9a20.69ecf94\</tspan>
-<tspan x="10" y="1034">b366b2.html (245)</tspan>
+<tspan x="10" y="970">", source: file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/electron.15b2d383d050.65445f1c\</tspan>
+<tspan x="10" y="986">424be.html (245)</tspan>
+<tspan x="10" y="1002">[4853:0402/055155:INFO:CONSOLE(245)] "created coverage file:///tmp/build/coverage.html/index.htm\</tspan>
+<tspan x="10" y="1018">l", source: file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/electron.15b2d383d050.65445f1\</tspan>
+<tspan x="10" y="1034">c424be.html (245)</tspan>
 <tspan x="10" y="1050">[node test-case 4 of 6 passed] - testCase_buildApp_default</tspan>
 <tspan x="10" y="1066"></tspan>
 <tspan x="10" y="1082">browserTest - created screen-capture file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/buil\</tspan>
-<tspan x="10" y="1098">d/screen-capture.npmTest.browser..png</tspan>
-<tspan x="10" y="1114"></tspan>
-<tspan x="10" y="1130">browserTest - created screen-capture file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/buil\</tspan>
-<tspan x="10" y="1146">d/screen-capture.npmTest.browser..html</tspan>
-<tspan x="10" y="1162"></tspan>
-<tspan x="10" y="1178">browserTest - created screen-capture file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/buil\</tspan>
-<tspan x="10" y="1194">d/screen-capture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-watch_2Ftmp_2Fb\</tspan>
-<tspan x="10" y="1210">uild_2Fapidoc.html.png</tspan>
+<tspan x="10" y="1098">d/screen-capture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-watch_2Ftmp_2Fb\</tspan>
+<tspan x="10" y="1114">uild_2Fapidoc.html.png</tspan>
+<tspan x="10" y="1130"></tspan>
+<tspan x="10" y="1146">browserTest - created screen-capture file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/buil\</tspan>
+<tspan x="10" y="1162">d/screen-capture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-watch_2Ftmp_2Fb\</tspan>
+<tspan x="10" y="1178">uild_2Fapidoc.html.html</tspan>
+<tspan x="10" y="1194"></tspan>
+<tspan x="10" y="1210">browserTest - exit-code 0 - /home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/apidoc.html</tspan>
 <tspan x="10" y="1226"></tspan>
-<tspan x="10" y="1242"></tspan>
-<tspan x="10" y="1258">browserTest - exit-code 0 - http://127.0.0.1:33612?modeTest=1</tspan>
-<tspan x="10" y="1274"></tspan>
-<tspan x="10" y="1290">browserTest - created screen-capture file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/buil\</tspan>
-<tspan x="10" y="1306">d/screen-capture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-watch_2Ftmp_2Fb\</tspan>
-<tspan x="10" y="1322">uild_2Fapidoc.html.html</tspan>
-<tspan x="10" y="1338"></tspan>
-<tspan x="10" y="1354">browserTest - merged coverage from /home/travis/build/npmdoc/node-npmdoc-watch/tmp/coverage.npmT\</tspan>
-<tspan x="10" y="1370">est.browser.%2F.json</tspan>
+<tspan x="10" y="1242">[node test-case 5 of 6 passed] - testCase_buildApidoc_default</tspan>
+<tspan x="10" y="1258"></tspan>
+<tspan x="10" y="1274">browserTest - created screen-capture file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/buil\</tspan>
+<tspan x="10" y="1290">d/screen-capture.npmTest.browser..png</tspan>
+<tspan x="10" y="1306"></tspan>
+<tspan x="10" y="1322">browserTest - created screen-capture file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/buil\</tspan>
+<tspan x="10" y="1338">d/screen-capture.npmTest.browser..html</tspan>
+<tspan x="10" y="1354"></tspan>
+<tspan x="10" y="1370">browserTest - exit-code 0 - http://127.0.0.1:59414?modeTest=1</tspan>
 <tspan x="10" y="1386"></tspan>
 <tspan x="10" y="1402"></tspan>
-<tspan x="10" y="1418">browserTest - merging test-report from /home/travis/build/npmdoc/node-npmdoc-watch/tmp/test-repo\</tspan>
-<tspan x="10" y="1434">rt.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="1418">browserTest - merged coverage from /home/travis/build/npmdoc/node-npmdoc-watch/tmp/coverage.npmT\</tspan>
+<tspan x="10" y="1434">est.browser.%2F.json</tspan>
 <tspan x="10" y="1450"></tspan>
-<tspan x="10" y="1466">[node test-case 5 of 6 passed] - testCase_webpage_default</tspan>
-<tspan x="10" y="1482"></tspan>
-<tspan x="10" y="1498">browserTest - exit-code 0 - /home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="1466"></tspan>
+<tspan x="10" y="1482">browserTest - merging test-report from /home/travis/build/npmdoc/node-npmdoc-watch/tmp/test-repo\</tspan>
+<tspan x="10" y="1498">rt.npmTest.browser.%2F.json</tspan>
 <tspan x="10" y="1514"></tspan>
-<tspan x="10" y="1530">[node test-case 6 of 6 passed] - testCase_buildApidoc_default</tspan>
+<tspan x="10" y="1530">[node test-case 6 of 6 passed] - testCase_webpage_default</tspan>
 <tspan x="10" y="1546">--------------------------|-----------|-----------|-----------|-----------|</tspan>
 <tspan x="10" y="1562">File                      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
 <tspan x="10" y="1578">--------------------------|-----------|-----------|-----------|-----------|</tspan>
@@ -113,8 +113,8 @@
 <tspan x="10" y="1770">port</tspan>
 <tspan x="10" y="1786"></tspan>
 <tspan x="10" y="1802">-------------------------------------------------------</tspan>
-<tspan x="10" y="1818">| test-report - buildNpmdoc - node - linux v6.10.1 - 2017-04-02T05:44:28.810Z</tspan>
-<tspan x="10" y="1834">|   26415 ms            0 failed        6 passed      |</tspan>
+<tspan x="10" y="1818">| test-report - buildNpmdoc - node - linux v6.10.1 - 2017-04-02T05:50:35.266Z</tspan>
+<tspan x="10" y="1834">|   87015 ms            0 failed        6 passed      |</tspan>
 <tspan x="10" y="1850">-------------------------------------------------------</tspan>
 <tspan x="10" y="1866"></tspan>
 <tspan x="10" y="1882">created test-report file:///home/travis/build/npmdoc/node-npmdoc-watch/tmp/build/test-report.htm\</tspan>
@@ -124,6 +124,6 @@
 <tspan x="10" y="1946">npmTest - 0 failed tests</tspan>
 <tspan x="10" y="1962"></tspan>
 <tspan x="10" y="1978"></tspan>
-<tspan x="10" y="1994">[MODE_BUILD=npmTest] - 2017-04-02T05:44:58Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="1994">[MODE_BUILD=npmTest] - 2017-04-02T05:52:05Z - EXIT_CODE - 0</tspan>
 </text>
 </svg>
