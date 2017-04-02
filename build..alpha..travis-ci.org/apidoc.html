@@ -1,0 +1,354 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/mikeal/watch"
+
+    >watch (v1.0.2)</a>
+</h1>
+<h4>Utilities for watching file trees.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.watch">module watch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.watch.createMonitor">
+            function <span class="apidocSignatureSpan">watch.</span>createMonitor
+            <span class="apidocSignatureSpan">(root, options, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.watch.unwatchTree">
+            function <span class="apidocSignatureSpan">watch.</span>unwatchTree
+            <span class="apidocSignatureSpan">(root)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.watch.walk">
+            function <span class="apidocSignatureSpan">watch.</span>walk
+            <span class="apidocSignatureSpan">(dir, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.watch.watchTree">
+            function <span class="apidocSignatureSpan">watch.</span>watchTree
+            <span class="apidocSignatureSpan">( root, options, callback )</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.watch" id="apidoc.module.watch">module watch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.watch.createMonitor" id="apidoc.element.watch.createMonitor">
+        function <span class="apidocSignatureSpan">watch.</span>createMonitor
+        <span class="apidocSignatureSpan">(root, options, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createMonitor = function (root, options, cb) {
+  if (!cb) {cb = options; options = {}}
+  var monitor = new events.EventEmitter();
+  monitor.stop = exports.unwatchTree.bind(null, root);
+
+  var prevFile = {file: null,action: null,stat: null};
+  exports.watchTree(root, options, function (f, curr, prev) {
+    // if not curr, prev, but f is an object
+    if (typeof f == &#x22;object&#x22; &#x26;&#x26; prev == null &#x26;&#x26; curr === null) {
+      monitor.files = f;
+      return cb(monitor);
+    }
+
+    // if not prev and either prevFile.file is not f or prevFile.action is not created
+    if (!prev) {
+      if (prevFile.file != f || prevFile.action != &#x22;created&#x22;) {
+        prevFile = { file: f, action: &#x22;created&#x22;, stat: curr };
+        return monitor.emit(&#x22;created&#x22;, f, curr);
+      }
+    }
+
+    // if curr.nlink is 0 and either prevFile.file is not f or prevFile.action is not removed
+    if (curr) {
+      if (curr.nlink === 0) {
+        if (prevFile.file != f || prevFile.action != &#x22;removed&#x22;) {
+          prevFile = { file: f, action: &#x22;removed&#x22;, stat: curr };
+          return monitor.emit(&#x22;removed&#x22;, f, curr);
+        }
+      }
+    }
+
+    // if prevFile.file is null or prevFile.stat.mtime is not the same as curr.mtime
+    if (prevFile.file === null) {
+      return monitor.emit(&#x22;changed&#x22;, f, curr, prev);
+    }
+    // stat might return null, so catch errors
+    try {
+      if (prevFile.stat.mtime.getTime() !== curr.mtime.getTime()) {
+        return monitor.emit(&#x22;changed&#x22;, f, curr, prev);
+      }
+    } catch(e) {
+      return monitor.emit(&#x22;changed&#x22;, f, curr, prev);
+    }
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  })
+&#x3c;/pre&#x3e;
+
+### watch.unwatchTree(root)
+
+Unwatch a previously watched directory root using `watch.watchTree`.
+
+### watch.<span class="apidocCodeKeywordSpan">createMonitor</span>(root, [options,] callback)
+
+This function creates an EventEmitter that gives notifications for different changes that happen to the file and directory tree
+under the given root argument.
+
+The options object is passed to watch.watchTree.
+
+The callback receives the monitor object.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.watch.unwatchTree" id="apidoc.element.watch.unwatchTree">
+        function <span class="apidocSignatureSpan">watch.</span>unwatchTree
+        <span class="apidocSignatureSpan">(root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unwatchTree = function (root) {
+  if (!watchedFiles[root]) return;
+  Object.keys(watchedFiles[root]).forEach(fs.unwatchFile);
+  watchedFiles[root] = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      // f was removed
+    } else {
+      // f was changed
+    }
+  })
+&#x3c;/pre&#x3e;
+
+### watch.<span class="apidocCodeKeywordSpan">unwatchTree</span>(root)
+
+Unwatch a previously watched directory root using `watch.watchTree`.
+
+### watch.createMonitor(root, [options,] callback)
+
+This function creates an EventEmitter that gives notifications for different changes that happen to the file and directory tree
+under the given root argument.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.watch.walk" id="apidoc.element.watch.walk">
+        function <span class="apidocSignatureSpan">watch.</span>walk
+        <span class="apidocSignatureSpan">(dir, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function walk(dir, options, callback) {
+  if (!callback) {callback = options; options = {}}
+  if (!callback.files) callback.files = {};
+  if (!callback.pending) callback.pending = 0;
+  callback.pending += 1;
+  fs.stat(dir, function (err, stat) {
+    if (err) return callback(err);
+    callback.files[dir] = stat;
+    fs.readdir(dir, function (err, files) {
+      if (err) {
+        if(err.code === &#x27;EACCES&#x27; &#x26;&#x26; options.ignoreUnreadableDir) return callback();
+        return callback(err);
+      }
+      callback.pending -= 1;
+      files.forEach(function (f, index) {
+        f = path.join(dir, f);
+        callback.pending += 1;
+        fs.stat(f, function (err, stat) {
+          var enoent = false
+            , done = false;
+
+          if (err) {
+            if (err.code !== &#x27;ENOENT&#x27; &#x26;&#x26; (err.code !== &#x27;EPERM&#x27; &#x26;&#x26; options.ignoreNotPermitted)) {
+              return callback(err);
+            } else {
+              enoent = true;
+            }
+          }
+          callback.pending -= 1;
+          done = callback.pending === 0;
+          if (!enoent) {
+            if (options.ignoreDotFiles &#x26;&#x26; path.basename(f)[0] === &#x27;.&#x27;) return done &#x26;&#x26; callback(null, callback.files);
+            if (options.filter &#x26;&#x26; !options.filter(f, stat)) return done &#x26;&#x26; callback(null, callback.files);
+            callback.files[f] = stat;
+            if (stat.isDirectory() &#x26;&#x26; !(options.ignoreDirectoryPattern &#x26;&#x26; options.ignoreDirectoryPattern.test(f))) walk(f, options
+, callback);
+            done = callback.pending === 0;
+            if (done) callback(null, callback.files);
+          }
+        })
+      })
+      if (callback.pending === 0) callback(null, callback.files);
+    })
+    if (callback.pending === 0) callback(null, callback.files);
+  })
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.watch.watchTree" id="apidoc.element.watch.watchTree">
+        function <span class="apidocSignatureSpan">watch.</span>watchTree
+        <span class="apidocSignatureSpan">( root, options, callback )</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watchTree = function ( root, options, callback ) {
+  if (!callback) {callback = options; options = {}}
+  walk(root, options, function (err, files) {
+    if (err) throw err;
+    var fileWatcher = function (f) {
+      var fsOptions = {};
+      if (options.interval) {
+        fsOptions.interval = options.interval * 1000;
+      }
+      fs.watchFile(f, fsOptions, function (c, p) {
+        // Check if anything actually changed in stat
+        if (files[f] &#x26;&#x26; !files[f].isDirectory() &#x26;&#x26; c.nlink !== 0 &#x26;&#x26; files[f].mtime.getTime() == c.mtime.getTime()) return;
+        files[f] = c;
+        if (!files[f].isDirectory()) callback(f, c, p);
+        else {
+          fs.readdir(f, function (err, nfiles) {
+            if (err) return;
+            nfiles.forEach(function (b) {
+              var file = path.join(f, b);
+              if (!files[file] &#x26;&#x26; (options.ignoreDotFiles !== true || b[0] != &#x27;.&#x27;)) {
+                fs.stat(file, function (err, stat) {
+                  if (options.filter &#x26;&#x26; !options.filter(file, stat)) return;
+                  callback(file, stat, null);
+                  files[file] = stat;
+                  fileWatcher(file);
+                })
+              }
+            })
+          })
+        }
+        if (c.nlink === 0) {
+          // unwatch removed files.
+          delete files[f]
+          fs.unwatchFile(f);
+        }
+      })
+    }
+    fileWatcher(root);
+    for (var i in files) {
+      fileWatcher(i);
+    }
+    watchedFiles[root] = files;
+    callback(files, null, null);
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  npm install watch
+&#x3c;/pre&#x3e;
+
+## Purpose
+
+The intention of this module is provide tools that make managing the watching of file &#x26; directory trees easier.
+
+#### watch.<span class="apidocCodeKeywordSpan">watchTree</span>(root, [options,] callback)
+
+The first argument is the directory root you want to watch.
+
+The options object is passed to fs.watchFile but can also be used to provide two additional watchTree specific options:
+
+* `&#x27;ignoreDotFiles&#x27;` - When true this option means that when the file tree is walked it will ignore files that being with
+ &#x22;.&#x22;
+* `&#x27;filter&#x27;` - You can use this option to provide a function that returns true or false for each file and directory to
+ decide whether or not that file/directory is included in the watcher.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
